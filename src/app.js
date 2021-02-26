@@ -22,8 +22,7 @@ class App {
   middleware() {
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(express.json());
-    const y = resolve(__dirname, 'uploads');
-    this.app.use(express.static(y));
+    this.app.use('/images/', express.static(resolve(__dirname, '..', 'uploads', 'images')));
   }
 
   router() {
